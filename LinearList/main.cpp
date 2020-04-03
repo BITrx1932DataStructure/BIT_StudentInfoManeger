@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<fy.h>
 
 using std::cin;
@@ -10,7 +10,7 @@ int main()
 	int x;
 	cin >> x;
 
-	//·ëÒ×£¬²âÊÔ
+	//å†¯æ˜“ï¼Œæµ‹è¯•
 	cout << "fy" << fy::fy(x) << endl;
 
 	return 0;
