@@ -144,9 +144,14 @@
   <ItemGroup>
     <ClCompile Include="fy.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="student.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="basic.h" />
     <ClInclude Include="fy.h" />
+    <ClInclude Include="managerBase.h" />
+    <ClInclude Include="student.h" />
+    <ClInclude Include="studentInfoManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

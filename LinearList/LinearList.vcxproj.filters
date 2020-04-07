@@ -21,9 +21,24 @@
     <ClCompile Include="fy.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="student.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="basic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="student.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="studentInfoManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="managerBase.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
