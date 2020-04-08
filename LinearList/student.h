@@ -1,7 +1,7 @@
 #pragma once
 
 #include<string>
-#include<basic.h>
+#include"basic.h"
 
 using std::string;
 
@@ -26,8 +26,7 @@ public:
 	type_birth birth;
 	type_phone phone;
 
-	Student();
-	~Student();
+	Student() = default;
+	~Student() = default;
 
-	bool operator==(const Student& s1)const;
 };

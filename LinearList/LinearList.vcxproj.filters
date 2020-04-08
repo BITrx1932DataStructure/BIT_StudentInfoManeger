@@ -18,10 +18,7 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="fy.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="student.cpp">
+    <ClCompile Include="studentInfoManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +35,7 @@
     <ClInclude Include="studentInfoManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="managerBase.h">
+    <ClInclude Include="vector.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

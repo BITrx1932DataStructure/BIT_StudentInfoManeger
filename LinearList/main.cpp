@@ -1,8 +1,12 @@
 ﻿#include<iostream>
-#include"infoManager.h"
+#include"studentInfoManager.h"
 
 int main()
 {
+	StudentInfoManager stu;
+	while (!stu.exit())
+	{
 
+	}
 	return 0;
 }
