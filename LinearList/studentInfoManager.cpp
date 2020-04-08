@@ -9,7 +9,7 @@ const string StudentInfoManager::_fileName("stuData.dat");
 
 void StudentInfoManager::init()
 {
-	setSize(50, 100);
+	setSize(50, 50);
 #ifndef _DEBUG
 	hideCursor();
 #endif 
@@ -23,7 +23,7 @@ void StudentInfoManager::init()
 
 void StudentInfoManager::printMenu()
 {
-	mainMenu.show(20, 20);
+	mainMenu.show();
 }
 
 int StudentInfoManager::getOpt()
@@ -63,6 +63,10 @@ void StudentInfoManager::erase()
 bool StudentInfoManager::exit()
 {
 	return _exitFlag;
+}
+
+StudentInfoManager::StudentInfoManager() :mainMenu(0, 25), _exitFlag(false), _opt(0)
+{
 }
 
 void StudentInfoManager::queryByName(const string& name)

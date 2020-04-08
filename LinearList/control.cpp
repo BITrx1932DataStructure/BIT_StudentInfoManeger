@@ -8,6 +8,10 @@ using std::cout;
 using std::endl;
 using std::swap;
 
+Control::Control() :consoleHandle(GetStdHandle(STD_OUTPUT_HANDLE))
+{
+}
+
 void Control::hideCursor()
 {
 	CONSOLE_CURSOR_INFO cursor;
@@ -50,10 +54,18 @@ void Control::print(const int x, const int y, const char* s, const int mode)
 {
 	Pos prePos = getPos();
 	//TODO 输出按照指定对齐方式输出文本
-	setPos(x, y);
-	cout << s;
-	cout.flush();
-
+	switch (mode)
+	{
+	case TEXT_LEFT:
+		setPos(x, y);
+		cout << s;
+		//cout.flush();
+		break;
+	case TEXT_RIGHT:
+		print(x, y - strlen(s), s);
+	case TEXT_MID:
+		print(x, y - strlen(s) / 2, s);
+	}
 	setPos(prePos);
 }
 
@@ -69,7 +81,7 @@ int Menu::getOpt()
 {
 	while (1)
 	{
-		show(20, 20);
+		show();
 		int ch = _getch();
 		if (ch == 13) return _opt;
 		else if (ch == 224)
@@ -84,20 +96,24 @@ int Menu::getOpt()
 	return 0;
 }
 
-Menu::Menu() :_opt(0)
+Menu::Menu() :_opt(0), _x(0), _y(0)
 {
 }
 
-void Menu::show(int x, int y)
+Menu::Menu(int x, int y) : _opt(0), _x(x), _y(y)
 {
+}
+
+void Menu::show()
+{
+	int x(_x), y(_y);
 	setColor(0xF0);
 	clear();
 	for (int i = 0; i < size(); i++)
 	{
-		setPos(x + i, y);
 		if (i == _opt)
-			printOpt(data[i].c_str());
-		else printNormal(data[i].c_str());
+			printOpt(x + i, y, data[i].c_str());
+		else printNormal(x + i, y, data[i].c_str());
 	}
 
 }
@@ -107,16 +123,16 @@ void Menu::add(const char* s)
 	data.push_back(string(s));
 }
 
-void Menu::printNormal(const char* s)
+void Menu::printNormal(const int x, const int y, const char* s)
 {
 	setColor(0xF0);
-	cout << s;
+	print(x, y, s, TEXT_MID);
 }
 
-void Menu::printOpt(const char* s)
+void Menu::printOpt(const int x, const int y, const char* s)
 {
 	setColor(0x70);
-	cout << s;
+	print(x, y, s, TEXT_MID);
 }
 
 int Menu::size()

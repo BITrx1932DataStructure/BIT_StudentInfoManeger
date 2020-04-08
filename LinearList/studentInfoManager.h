@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include<string>
 #include"student.h"
 #include"vector.h"
@@ -19,9 +19,7 @@ public:
 	void query();
 	bool exit();
 
-	StudentInfoManager() :_exitFlag(false), _opt(0)
-	{
-	}
+	StudentInfoManager();
 	~StudentInfoManager() = default;
 private:
 	bool _exitFlag;

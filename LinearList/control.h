@@ -6,7 +6,7 @@
 
 #define TEXT_LEFT 0 
 #define TEXT_MID 1
-#define TEXT_right 2
+#define TEXT_RIGHT 2
 
 using std::string;
 using std::vector;
@@ -22,9 +22,7 @@ class Control
 	} COORD；
 	*/
 public:
-	Control() :consoleHandle(GetStdHandle(STD_OUTPUT_HANDLE))
-	{
-	}
+	Control();
 
 	void hideCursor();
 	void setColor(int color);
@@ -44,14 +42,17 @@ class Menu :Control
 public:
 	int getOpt();
 	Menu();
-	void show(int x, int y);
+	Menu(int x, int y);
+	void show();
 	void add(const char* s);
+	//void setPos();
 
 private:
-	void printNormal(const char* s);
-	void printOpt(const char* s);
+	void printNormal(const int x, const int y, const char* s);
+	void printOpt(const int x, const int y, const char* s);
 	vector<string> data;
 	int _opt;
+	int _x, _y;
 
 	int size();
 };
