@@ -27,6 +27,7 @@ private:
 	bool _exitFlag;
 	static const string _fileName;
 	int _opt;
+	Menu mainMenu;
 
 	void saveTofile();
 	void insert();

@@ -9,12 +9,19 @@ const string StudentInfoManager::_fileName("stuData.dat");
 
 void StudentInfoManager::init()
 {
-	printf("init");
 	setSize(100, 200);
+	system("color F0");
+	mainMenu.add("1. 从文件加载");
+	mainMenu.add("2. 所有学生信息");
+	mainMenu.add("3. 查询学生信息");
+	mainMenu.add("4. 添加学生信息");
+	mainMenu.add("5. 保存并退出系统");
 }
 
 void StudentInfoManager::printMenu()
 {
+	mainMenu.show(0, 0);
+	return;
 	clear();
 	cout << "1. 从文件加载" << endl;
 	cout << "2. 所有学生信息" << endl;
@@ -26,8 +33,7 @@ void StudentInfoManager::printMenu()
 
 int StudentInfoManager::getOpt()
 {
-	cin >> _opt;
-	return _opt;
+	return mainMenu.getOpt();
 }
 
 void StudentInfoManager::optErro()
