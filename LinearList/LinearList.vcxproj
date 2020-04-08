@@ -142,12 +142,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="control.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="studentInfoManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="basic.h" />
-    <ClInclude Include="fy.h" />
+    <ClInclude Include="control.h" />
     <ClInclude Include="student.h" />
     <ClInclude Include="studentInfoManager.h" />
     <ClInclude Include="vector.h" />

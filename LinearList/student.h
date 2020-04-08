@@ -1,9 +1,24 @@
 #pragma once
 
 #include<string>
-#include"basic.h"
 
 using std::string;
+
+class Date
+{
+public:
+	int year;
+	int month;
+	int day;
+
+	Date() = default;
+
+	Date(int _year, int _month, int _day) :year(_year), month(_month), day(_day)
+	{
+	}
+
+	~Date() = default;
+};
 
 class Student
 {

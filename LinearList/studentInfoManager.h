@@ -2,29 +2,35 @@
 #include<string>
 #include"student.h"
 #include"vector.h"
+#include"control.h"
 
 using std::string;
 
-class StudentInfoManager :fy::vector<Student>
+class StudentInfoManager :fy::vector<Student>, Control
 {
 public:
+	void init();
 	void printMenu();
+	int getOpt();
+	void optErro();
 
 	void readFromFile();
-	void saveTofile();
 	void printAll();
-	void insert();
-	void erase();
-	void exit();
+	void query();
+	bool exit();
 
-	StudentInfoManager() :exitFlag(0)
+	StudentInfoManager() :_exitFlag(false), _opt(0)
 	{
 	}
 	~StudentInfoManager() = default;
 private:
-	int exitFlag;
-	static const string fileName;
+	bool _exitFlag;
+	static const string _fileName;
+	int _opt;
 
+	void saveTofile();
+	void insert();
+	void erase();
 	void queryByName(const string& name);
 	void queryById(const string& id);
 	void queryBySchoolIDd(const string& schoolId);

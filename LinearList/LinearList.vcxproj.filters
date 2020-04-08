@@ -21,14 +21,11 @@
     <ClCompile Include="studentInfoManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="control.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="fy.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="basic.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="student.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -36,6 +33,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="vector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="control.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
