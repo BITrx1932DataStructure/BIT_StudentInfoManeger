@@ -1,6 +1,10 @@
 ﻿#include<iostream>
 #include"studentInfoManager.h"
 
+using std::cin;
+using std::cout;
+using std::endl;
+
 int main()
 {
 	StudentInfoManager stu;
@@ -10,6 +14,7 @@ int main()
 	{
 		stu.printMenu();
 		opt = stu.getOpt();
+		cout << "opt=" << opt << endl;
 		switch (opt)
 		{
 		case 1:

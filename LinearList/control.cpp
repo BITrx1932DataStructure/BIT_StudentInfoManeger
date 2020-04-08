@@ -1,4 +1,4 @@
-#include "control.h"
+ï»¿#include "control.h"
 #include<cstdlib>
 #include<algorithm>
 #include<conio.h>
@@ -7,6 +7,14 @@
 using std::cout;
 using std::endl;
 using std::swap;
+
+void Control::hideCursor()
+{
+	CONSOLE_CURSOR_INFO cursor;
+	GetConsoleCursorInfo(consoleHandle, &cursor);
+	cursor.bVisible = FALSE;
+	SetConsoleCursorInfo(consoleHandle, &cursor);
+}
 
 void Control::setColor(int color)
 {
@@ -41,7 +49,7 @@ void Control::setPos(const int x, const int y)
 void Control::print(const int x, const int y, const char* s, const int mode)
 {
 	Pos prePos = getPos();
-	//TODO Êä³ö°´ÕÕÖ¸¶¨¶ÔÆë·½Ê½Êä³öÎÄ±¾
+	//TODO è¾“å‡ºæŒ‰ç…§æŒ‡å®šå¯¹é½æ–¹å¼è¾“å‡ºæ–‡æœ¬
 	setPos(x, y);
 	cout << s;
 	cout.flush();
@@ -61,7 +69,7 @@ int Menu::getOpt()
 {
 	while (1)
 	{
-		show(0, 0);
+		show(20, 20);
 		int ch = _getch();
 		if (ch == 13) return _opt;
 		else if (ch == 224)

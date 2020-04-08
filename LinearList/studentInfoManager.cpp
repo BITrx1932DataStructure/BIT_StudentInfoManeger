@@ -1,4 +1,4 @@
-#include "studentInfoManager.h"
+ï»¿#include "studentInfoManager.h"
 #include<iostream>
 
 using std::cin;
@@ -9,26 +9,21 @@ const string StudentInfoManager::_fileName("stuData.dat");
 
 void StudentInfoManager::init()
 {
-	setSize(100, 200);
+	setSize(50, 100);
+#ifndef _DEBUG
+	hideCursor();
+#endif 
 	system("color F0");
-	mainMenu.add("1. ´ÓÎÄ¼ş¼ÓÔØ");
-	mainMenu.add("2. ËùÓĞÑ§ÉúĞÅÏ¢");
-	mainMenu.add("3. ²éÑ¯Ñ§ÉúĞÅÏ¢");
-	mainMenu.add("4. Ìí¼ÓÑ§ÉúĞÅÏ¢");
-	mainMenu.add("5. ±£´æ²¢ÍË³öÏµÍ³");
+	mainMenu.add("1. ä»æ–‡ä»¶åŠ è½½");
+	mainMenu.add("2. æ‰€æœ‰å­¦ç”Ÿä¿¡æ¯");
+	mainMenu.add("3. æŸ¥è¯¢å­¦ç”Ÿä¿¡æ¯");
+	mainMenu.add("4. æ·»åŠ å­¦ç”Ÿä¿¡æ¯");
+	mainMenu.add("5. ä¿å­˜å¹¶é€€å‡ºç³»ç»Ÿ");
 }
 
 void StudentInfoManager::printMenu()
 {
-	mainMenu.show(0, 0);
-	return;
-	clear();
-	cout << "1. ´ÓÎÄ¼ş¼ÓÔØ" << endl;
-	cout << "2. ËùÓĞÑ§ÉúĞÅÏ¢" << endl;
-	cout << "3. ²éÑ¯Ñ§ÉúĞÅÏ¢" << endl;
-	cout << "4. Ìí¼ÓÑ§ÉúĞÅÏ¢" << endl;
-	cout << "5. ±£´æ²¢ÍË³öÏµÍ³" << endl;
-	cout << "ÊäÈëĞòºÅ--";
+	mainMenu.show(20, 20);
 }
 
 int StudentInfoManager::getOpt()
@@ -38,7 +33,7 @@ int StudentInfoManager::getOpt()
 
 void StudentInfoManager::optErro()
 {
-	cout << "£¡ÊäÈë´íÎó£¡" << endl;
+	cout << "ï¼è¾“å…¥é”™è¯¯ï¼" << endl;
 }
 
 void StudentInfoManager::readFromFile()

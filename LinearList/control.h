@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include<Windows.h>
 //#include"vector.h"
 #include<vector>
@@ -19,20 +19,21 @@ class Control
 	{
 		SHORT X;
 		SHORT Y;
-	} COORD£»
+	} COORDï¼›
 	*/
 public:
 	Control() :consoleHandle(GetStdHandle(STD_OUTPUT_HANDLE))
 	{
 	}
 
+	void hideCursor();
 	void setColor(int color);
-	void clear();//Çå¿Õ¿ØÖÆÌ¨ÄÚÈİ
+	void clear();//æ¸…ç©ºæ§åˆ¶å°å†…å®¹
 	void setSize(const int x, const int y);
 	void setPos(const Pos pos);
-	void setPos(const int x, const int y);//ÉèÖÃ¹â±êÎ»ÖÃ
-	void print(const int x, const int y, const char* s, const int mode = TEXT_LEFT);//ÔÚÖ¸¶¨×ø±êÎ»ÖÃÊä³öÄÚÈİ
-	Pos getPos();//»ñÈ¡¹â±êÎ»ÖÃ
+	void setPos(const int x, const int y);//è®¾ç½®å…‰æ ‡ä½ç½®
+	void print(const int x, const int y, const char* s, const int mode = TEXT_LEFT);//åœ¨æŒ‡å®šåæ ‡ä½ç½®è¾“å‡ºå†…å®¹
+	Pos getPos();//è·å–å…‰æ ‡ä½ç½®
 private:
 	HANDLE consoleHandle;
 
