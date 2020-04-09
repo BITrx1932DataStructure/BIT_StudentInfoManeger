@@ -22,12 +22,11 @@ public:
 	void printAll();
 	void query();
 	void insert();
-	bool exit();
+	void SaveAndExit();
 
 	StudentInfoManager();
 	~StudentInfoManager() = default;
 private:
-	bool _exitFlag;
 	static const string _fileName;
 	int _opt;
 	Menu mainMenu;
@@ -37,6 +36,6 @@ private:
 	void queryByName(const string& name);
 	void queryById(const string& id);
 	void queryBySchoolIDd(const string& schoolId);
-	void print(const Student& student);
-
+	void printStudent(const int x, const int y, const Student& student);
+	string getInput(const char* s);
 };

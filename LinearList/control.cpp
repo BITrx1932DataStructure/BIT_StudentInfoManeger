@@ -28,6 +28,7 @@ void Control::setColor(int color)
 void Control::clear()
 {
 	system("cls\n");
+	system("color F0\n");
 }
 
 void Control::setSize(const int x, const int y)
@@ -62,8 +63,10 @@ void Control::print(const int x, const int y, const char* s, const int mode)
 		break;
 	case TEXT_RIGHT:
 		print(x, y - strlen(s), s);
+		break;
 	case TEXT_MID:
 		print(x, y - strlen(s) / 2, s);
+		break;
 	}
 	setPos(prePos);
 }
