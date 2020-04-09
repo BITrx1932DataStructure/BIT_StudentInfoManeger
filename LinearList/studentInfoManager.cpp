@@ -12,7 +12,7 @@ void StudentInfoManager::init()
 	setSize(50, 50);
 #ifndef _DEBUG
 	hideCursor();
-#endif 
+#endif //fy
 	system("color F0");
 	mainMenu.add("1. 从文件加载");
 	mainMenu.add("2. 所有学生信息");

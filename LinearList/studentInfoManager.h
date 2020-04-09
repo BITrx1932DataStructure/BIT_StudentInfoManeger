@@ -18,6 +18,7 @@ public:
 	void readFromFile();
 	void printAll();
 	void query();
+	void insert();
 	bool exit();
 
 	StudentInfoManager();
@@ -29,7 +30,6 @@ private:
 	Menu mainMenu;
 
 	void saveTofile();
-	void insert();
 	void erase();
 	void queryByName(const string& name);
 	void queryById(const string& id);
