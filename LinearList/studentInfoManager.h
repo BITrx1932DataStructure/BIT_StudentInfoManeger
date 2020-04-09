@@ -3,13 +3,16 @@
 #include"student.h"
 #include"vector.h"
 #include"control.h"
+#include<vector>
 
 using std::string;
-using container = fy::vector<Student>;
+//using container = fy::vector<Student>;
+using container = std::vector<Student>;
 
-class StudentInfoManager :container, Control
+class StudentInfoManager :Control
 {
 public:
+	container data;
 	void init();
 	void printMenu();
 	int getOpt();

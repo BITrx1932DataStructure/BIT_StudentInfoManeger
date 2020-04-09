@@ -14,11 +14,11 @@ void StudentInfoManager::init()
 	hideCursor();
 #endif //fy2
 	system("color F0");
-	mainMenu.add("1. 从文件加载");
-	mainMenu.add("2. 所有学生信息");
-	mainMenu.add("3. 查询学生信息");
-	mainMenu.add("4. 添加学生信息");
-	mainMenu.add("5. 保存并退出系统");
+	mainMenu.add("从文件加载");
+	mainMenu.add("所有学生信息");
+	mainMenu.add("查询学生信息");
+	mainMenu.add("添加学生信息");
+	mainMenu.add("保存并退出系统");
 }
 
 void StudentInfoManager::printMenu()
@@ -46,6 +46,7 @@ void StudentInfoManager::saveTofile()
 
 void StudentInfoManager::printAll()
 {
+
 }
 
 void StudentInfoManager::query()
@@ -71,6 +72,7 @@ StudentInfoManager::StudentInfoManager() :mainMenu(0, 25), _exitFlag(false), _op
 
 void StudentInfoManager::queryByName(const string& name)
 {
+
 }
 
 void StudentInfoManager::queryById(const string& id)

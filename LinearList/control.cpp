@@ -92,7 +92,7 @@ int Menu::getOpt()
 				_opt++;
 		}
 	}
-	return 0;
+	return -1;
 }
 
 Menu::Menu() :_opt(0), _x(0), _y(0)

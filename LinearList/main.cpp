@@ -17,8 +17,9 @@ int main()
 		cout << "opt=" << opt << endl;
 		switch (opt)
 		{
+		case 0:
+			break;
 		case 1:
-
 			break;
 		case 2:
 			break;
@@ -26,12 +27,9 @@ int main()
 			break;
 		case 4:
 			break;
-		case 5:
-			break;
 		default:
 			stu.optErro();
 			break;
-
 		}
 	}
 	return 0;
