@@ -53,7 +53,6 @@ void Control::setPos(const int x, const int y)
 void Control::print(const int x, const int y, const char* s, const int mode)
 {
 	Pos prePos = getPos();
-	//TODO 输出按照指定对齐方式输出文本
 	switch (mode)
 	{
 	case TEXT_LEFT:
@@ -89,7 +88,7 @@ int Menu::getOpt()
 			ch = _getch();
 			if (ch == 72 && _opt >= 1)//UP
 				_opt--;
-			if (ch == 80 && _opt <= size() - 1 - 1)
+			if (ch == 80 && _opt <= size() - 2)//DOWN
 				_opt++;
 		}
 	}
@@ -108,7 +107,7 @@ void Menu::show()
 {
 	int x(_x), y(_y);
 	setColor(0xF0);
-	clear();
+	//clear();
 	for (int i = 0; i < size(); i++)
 	{
 		if (i == _opt)

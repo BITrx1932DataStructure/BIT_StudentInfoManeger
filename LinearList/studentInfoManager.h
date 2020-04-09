@@ -5,8 +5,9 @@
 #include"control.h"
 
 using std::string;
+using container = fy::vector<Student>;
 
-class StudentInfoManager :fy::vector<Student>, Control
+class StudentInfoManager :container, Control
 {
 public:
 	void init();
