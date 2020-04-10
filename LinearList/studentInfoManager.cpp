@@ -1,5 +1,6 @@
 ﻿#include "studentInfoManager.h"
 #include<iostream>
+#include<string>
 
 using std::cin;
 using std::cout;
@@ -29,6 +30,10 @@ void StudentInfoManager::optErro()
 
 void StudentInfoManager::readFromFile()
 {
+	printf("输入文件名，默认为balabala.dat:");
+	string fileName;
+	cin >> fileName;
+	base.readFromFile(fuleName);
 }
 
 void StudentInfoManager::saveTofile()
@@ -42,6 +47,14 @@ void StudentInfoManager::printAll()
 
 void StudentInfoManager::query()
 {
+	system("cls");
+	int opt = getOpt();
+	switch (opt)
+	{
+	case 0:
+		readFromFile();
+		break;
+	}
 }
 
 void StudentInfoManager::insert()
@@ -61,21 +74,21 @@ StudentInfoManager::StudentInfoManager()
 {
 }
 
-void StudentInfoManager::queryByName(const string& name)
+void StudentInfoManager::queryByName()
 {
 
 }
 
-void StudentInfoManager::queryById(const string& id)
+void StudentInfoManager::queryById()
 {
 }
 
-void StudentInfoManager::queryBySchoolIDd(const string& schoolId)
+void StudentInfoManager::queryBySchoolIDd()
 {
 }
 
-void StudentInfoManager::printStudent(const int x, const int y, const Student& student)
+void StudentInfoManager::printStudent(const Student& student)
 {
-
 }
+
 

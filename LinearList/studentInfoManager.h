@@ -20,11 +20,12 @@ public:
 	StudentInfoManager();
 	~StudentInfoManager() = default;
 private:
+	StudentInfoManagerBase base;
 
 	void saveTofile();//保存到文件
 	void erase();//删除学生
-	void queryByName(const string& name);//通过姓名查询
-	void queryById(const string& id);//通过身份证号查询
-	void queryBySchoolIDd(const string& schoolId);//通过学号查询
-	void printStudent(const int x, const int y, const Student& student);//输出学生信息
+	void queryByName();//通过姓名查询
+	void queryById();//通过身份证号查询
+	void queryBySchoolIDd();//通过学号查询
+	void printStudent(const Student& student);//输出学生信息
 };

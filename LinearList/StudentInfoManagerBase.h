@@ -6,12 +6,11 @@
 using std::cin;
 using std::cout;
 using std::endl;
+using Container = fy::vector<Student>;
 
-class StudentInfoManagerBase
+class StudentInfoManagerBase :Container
 {
-	using Container = fy::vector<Student>;
 public:
 
 private:
-	Container data;
 };
