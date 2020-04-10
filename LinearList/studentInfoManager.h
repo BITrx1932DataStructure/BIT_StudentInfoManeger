@@ -9,7 +9,7 @@ using std::string;
 //using container = fy::vector<Student>;
 using container = std::vector<Student>;
 
-class StudentInfoManager :Control
+class StudentInfoManager
 {
 public:
 	container data;
@@ -28,8 +28,6 @@ public:
 	~StudentInfoManager() = default;
 private:
 	static const string _fileName;
-	int _opt;
-	Menu mainMenu;
 
 	void saveTofile();
 	void erase();

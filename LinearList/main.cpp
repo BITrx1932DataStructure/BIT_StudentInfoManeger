@@ -7,17 +7,15 @@ using std::endl;
 
 int main()
 {
-	cout << "加载中..." << endl;
 	StudentInfoManager stu;
 	int opt = 0;
 	stu.init();
-	bool whileFlag = 1;
+	bool whileFlag = 1;//控制while循环
 	while (whileFlag)
 	{
-		system("cls");
+		system("cls");//清空控制台
 		stu.printMenu();
 		opt = stu.getOpt();
-		cout << "opt=" << opt << endl;
 		switch (opt)
 		{
 		case 0:
@@ -27,14 +25,13 @@ int main()
 		case 2:
 			break;
 		case 3:
-			stu.insert();
+
 			break;
 		case 4:
-			stu.SaveAndExit();
-			whileFlag = 0;
+
 			break;
 		default:
-			stu.optErro();
+
 			break;
 		}
 	}
