@@ -5,8 +5,6 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-const string StudentInfoManager::_fileName("stuData.dat");
-
 void StudentInfoManager::init()
 {
 	system("color F0");//设置为白底黑字
