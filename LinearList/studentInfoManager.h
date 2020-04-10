@@ -1,19 +1,11 @@
 ﻿#pragma once
 #include<string>
 #include"student.h"
-#include"vector.h"
-#include"control.h"
 #include"StudentInfoManagerBase.h"
-#include<vector>
-
-using std::string;
-//using container = fy::vector<Student>;
-using container = std::vector<Student>;
 
 class StudentInfoManager :StudentInfoManagerBase
 {
 public:
-	container data;
 	void init();//初始化
 	void printMenu();//输出主菜单
 	int getOpt();//输入选项
@@ -28,7 +20,6 @@ public:
 	StudentInfoManager();
 	~StudentInfoManager() = default;
 private:
-	static const string _fileName;
 
 	void saveTofile();//保存到文件
 	void erase();//删除学生
