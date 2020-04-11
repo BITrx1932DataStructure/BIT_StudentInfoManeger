@@ -8,30 +8,30 @@ using std::endl;
 int main()
 {
 	StudentInfoManager stu;
-	int opt = 0;
-	stu.init();
-	while (!stu.exit())
+	stu.init();//初始化
+	bool whileFlag = 1;//控制while循环
+	while (whileFlag)
 	{
-		stu.printMenu();
-		opt = stu.getOpt();
-		cout << "opt=" << opt << endl;
+		system("cls");//清空控制台
+		stu.printMenu();//输出主菜单
+		int opt = stu.getOpt();//输入选项
 		switch (opt)
 		{
+		case 0:
+			break;
 		case 1:
-
 			break;
 		case 2:
 			break;
 		case 3:
+
 			break;
 		case 4:
-			break;
-		case 5:
+
 			break;
 		default:
-			stu.optErro();
-			break;
 
+			break;
 		}
 	}
 	return 0;

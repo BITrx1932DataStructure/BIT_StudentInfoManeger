@@ -21,9 +21,6 @@
     <ClCompile Include="studentInfoManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="control.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="student.h">
@@ -35,7 +32,7 @@
     <ClInclude Include="vector.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="control.h">
+    <ClInclude Include="StudentInfoManagerBase.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

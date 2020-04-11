@@ -1,34 +1,26 @@
 ﻿#include "studentInfoManager.h"
 #include<iostream>
+#include<string>
 
 using std::cin;
 using std::cout;
 using std::endl;
 
-const string StudentInfoManager::_fileName("stuData.dat");
-
 void StudentInfoManager::init()
 {
-	setSize(50, 50);
-#ifndef _DEBUG
-	hideCursor();
-#endif //fy2
-	system("color F0");
-	mainMenu.add("1. 从文件加载");
-	mainMenu.add("2. 所有学生信息");
-	mainMenu.add("3. 查询学生信息");
-	mainMenu.add("4. 添加学生信息");
-	mainMenu.add("5. 保存并退出系统");
+	system("color F0");//设置为白底黑字
 }
 
 void StudentInfoManager::printMenu()
 {
-	mainMenu.show();
+
 }
 
 int StudentInfoManager::getOpt()
 {
-	return mainMenu.getOpt();
+	int opt;
+	cin >> opt;
+	return opt;
 }
 
 void StudentInfoManager::optErro()
@@ -38,6 +30,10 @@ void StudentInfoManager::optErro()
 
 void StudentInfoManager::readFromFile()
 {
+	printf("输入文件名，默认为balabala.dat:");
+	string fileName;
+	cin >> fileName;
+	base.readFromFile(fuleName);
 }
 
 void StudentInfoManager::saveTofile()
@@ -46,10 +42,19 @@ void StudentInfoManager::saveTofile()
 
 void StudentInfoManager::printAll()
 {
+
 }
 
 void StudentInfoManager::query()
 {
+	system("cls");
+	int opt = getOpt();
+	switch (opt)
+	{
+	case 0:
+		readFromFile();
+		break;
+	}
 }
 
 void StudentInfoManager::insert()
@@ -60,28 +65,31 @@ void StudentInfoManager::erase()
 {
 }
 
-bool StudentInfoManager::exit()
+void StudentInfoManager::SaveAndExit()
 {
-	return _exitFlag;
+	saveTofile();
 }
 
-StudentInfoManager::StudentInfoManager() :mainMenu(0, 25), _exitFlag(false), _opt(0)
-{
-}
-
-void StudentInfoManager::queryByName(const string& name)
+StudentInfoManager::StudentInfoManager()
 {
 }
 
-void StudentInfoManager::queryById(const string& id)
-{
-}
-
-void StudentInfoManager::queryBySchoolIDd(const string& schoolId)
+void StudentInfoManager::queryByName()
 {
 
 }
 
-void StudentInfoManager::print(const Student& student)
+void StudentInfoManager::queryById()
 {
 }
+
+void StudentInfoManager::queryBySchoolIDd()
+{
+
+}
+
+void StudentInfoManager::printStudent(const Student& student)
+{
+}
+
+

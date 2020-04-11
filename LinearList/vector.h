@@ -69,11 +69,13 @@ namespace fy
 
 		reference operator[](size_t pos)//类似数组的下标运算符
 		{
+			assert(pos < size());
 			return *(_begin + pos);
 		}
 
 		const_reference operator[](size_t pos) const
 		{
+			assert(pos < size());
 			return *(_begin + pos);
 		}
 
