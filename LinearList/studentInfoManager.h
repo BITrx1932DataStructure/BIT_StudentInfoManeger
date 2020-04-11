@@ -15,10 +15,10 @@ public:
 	int getOpt();
 	void optErro();
 
-	void readFromFile();
+	void readFromFile();//
 	void printAll();
 	void query();
-	void insert();
+	void insert();//
 	bool exit();
 
 	StudentInfoManager();
@@ -29,11 +29,11 @@ private:
 	int _opt;
 	Menu mainMenu;
 
-	void saveTofile();
-	void erase();
-	void queryByName(const string& name);
-	void queryById(const string& id);
-	void queryBySchoolIDd(const string& schoolId);
+	void saveTofile();//
+	void erase();//
+	void queryByName(const string& name);//
+	void queryById(const string& id);//
+	void queryBySchoolIDd(const string& schoolId);//
 	void print(const Student& student);
 
 };

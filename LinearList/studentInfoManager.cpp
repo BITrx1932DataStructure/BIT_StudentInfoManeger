@@ -79,6 +79,7 @@ void StudentInfoManager::queryById(const string& id)
 
 void StudentInfoManager::queryBySchoolIDd(const string& schoolId)
 {
+
 }
 
 void StudentInfoManager::print(const Student& student)
