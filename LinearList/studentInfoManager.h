@@ -14,7 +14,7 @@ public:
 	void readFromFile();//从文件读取
 	void printAll();//输出所有学生
 	void query();//查询（先查绚，再选择修改或删除或什么也不做）
-	void insert();//增加学生
+	void Insert();//增加学生
 	void SaveAndExit();//保存并退出
 
 	StudentInfoManager();
@@ -23,7 +23,7 @@ private:
 	StudentInfoManagerBase base;
 
 	void saveTofile();//保存到文件
-	void erase();//删除学生
+	void Erase();//删除学生
 	void queryByName();//通过姓名查询
 	void queryById();//通过身份证号查询
 	void queryBySchoolIDd();//通过学号查询

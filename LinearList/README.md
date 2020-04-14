@@ -4,8 +4,8 @@
 ## Student QueryByName(const string Name);
 ## Student QueryById(const string ID);
 ## Student QueryBySchoolId(const string SchoolID);
-## void erase(const Student student);
-## void insert(const Student student);
+## void Erase(const Student student);
+## void Insert(const Student student);
 ## void readFromFile(const string fileName);
 ## void saveToFile(const string fileName);
 

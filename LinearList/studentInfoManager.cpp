@@ -57,11 +57,11 @@ void StudentInfoManager::query()
 	}
 }
 
-void StudentInfoManager::insert()
+void StudentInfoManager::Insert()
 {
 }
 
-void StudentInfoManager::erase()
+void StudentInfoManager::Erase()
 {
 }
 
@@ -85,6 +85,7 @@ void StudentInfoManager::queryById()
 
 void StudentInfoManager::queryBySchoolIDd()
 {
+
 }
 
 void StudentInfoManager::printStudent(const Student& student)
