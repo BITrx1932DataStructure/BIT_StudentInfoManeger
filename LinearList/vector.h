@@ -10,13 +10,13 @@ namespace fy
 	template <typename T>
 	class vector
 	{
+	public:
 		using value_type = T;              //值
 		using iterator = T*;              //迭代器
 		using const_iterator = T*;        //常量迭代器
 		using reference = T&;             //引用
 		using const_reference = const T&; //常量引用
 
-	public:
 		vector() : _begin(nullptr), _end(nullptr), _finish(nullptr) //构造函数，默认
 		{
 		}

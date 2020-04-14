@@ -18,7 +18,19 @@ public:
 	}
 
 	~Date() = default;
+	friend ostream& operator<<(ostream& out, const Date& date);
+	friend istream& operator>>(istream& in, Date& date);
 };
+
+ostream& operator<<(ostream& out, const Date& date)
+{
+	out << date.year << "-" << date.month << "-" << date.day;
+}
+
+istream& operator>>(istream& in, Date& date)
+{
+	in >> date.year >> date.month >> date.day;
+}
 
 class Student
 {

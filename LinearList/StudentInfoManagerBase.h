@@ -3,7 +3,7 @@
 #include"student.h"
 #include<iostream>
 #include <fstream>
-#include<studentInfoManager.h>
+
 using std::cin;
 using std::cout;
 using std::endl;
@@ -15,7 +15,7 @@ public:
 	Student QueryByName(string Name)
 	{
 		iterator p;
-		for ( p = a.begin;p != a.end;p++)
+		for (p = a.begin; p != a.end; p++)
 		{
 			if (p->name == Name)
 			{
@@ -27,7 +27,7 @@ public:
 	Student QueryById(string ID)
 	{
 		iterator p;
-		for (p = a.begin;p != a.end;p++)
+		for (p = a.begin; p != a.end; p++)
 		{
 			if (p->id == ID)
 			{
@@ -39,7 +39,7 @@ public:
 	Student QueryBySchoolId(string SchoolID)
 	{
 		iterator p;
-		for (p = a.begin;p != a.end;p++)
+		for (p = a.begin; p != a.end; p++)
 		{
 			if (p->schoolId == SchoolID)
 			{
@@ -80,7 +80,7 @@ public:
 		type_phone phone;*/
 		if (a.empty)
 		{
-			file.open("filename.txt", iso::in | iso::out);
+			file.open("filename.txt", ios::in | ios::out);
 			if (file.bad())
 			{
 				cout << "failed open\n";
@@ -92,7 +92,7 @@ public:
 				Student* b = new Student;
 				//for (int i = 0;i < 8;i++)
 
-				file >> b->name >> b->id >> b->schoolId >> b->sex 
+				file >> b->name >> b->id >> b->schoolId >> b->sex
 					>> b->address >> b->age >> b->birth >> b->phone;
 				a.push_back(*b);
 
@@ -112,13 +112,13 @@ public:
 	};
 	void saveToFile(string fileName)
 	{
-		
+
 		file.close();
 	};
 
 private:
 	vector<Student> a;
 	fstream file;
-	
+
 
 };
