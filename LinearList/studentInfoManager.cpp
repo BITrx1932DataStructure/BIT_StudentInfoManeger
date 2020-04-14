@@ -33,7 +33,7 @@ void StudentInfoManager::readFromFile()
 	printf("输入文件名，默认为balabala.dat:");
 	string fileName;
 	cin >> fileName;
-	base.readFromFile(fuleName);
+	base.readFromFile(fileName);
 }
 
 void StudentInfoManager::saveTofile()
