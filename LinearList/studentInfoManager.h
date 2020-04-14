@@ -1,9 +1,9 @@
 ﻿#pragma once
 #include<string>
 #include"student.h"
-#include"StudentInfoManagerBase.h"
+#include"studentContainer.h"
 
-class StudentInfoManager :StudentInfoManagerBase
+class StudentInfoManager :StudentContainer
 {
 public:
 	void init();//初始化
@@ -20,7 +20,7 @@ public:
 	StudentInfoManager();
 	~StudentInfoManager() = default;
 private:
-	StudentInfoManagerBase base;
+	StudentContainer base;
 
 	void saveTofile();//保存到文件
 	void Erase();//删除学生

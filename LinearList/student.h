@@ -1,7 +1,10 @@
 ﻿#pragma once
 
 #include<string>
+#include<iostream>
 
+using std::ostream;
+using std::istream;
 using std::string;
 
 class Date
@@ -44,6 +47,7 @@ class Student
 	using type_schoolId = string;
 
 public:
+	const static Student emptyStudent;
 	type_name name;
 	type_id id;
 	type_id schoolId;
@@ -56,4 +60,11 @@ public:
 	Student() = default;
 	~Student() = default;
 
+	operator bool()
+	{
+		return !(name.empty() && id.empty() && schoolId.empty());
+	}
+
 };
+
+const Student Student::emptyStudent = Student();
