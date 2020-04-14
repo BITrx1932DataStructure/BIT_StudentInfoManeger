@@ -16,24 +16,12 @@ public:
 
 	Date() = default;
 
-	Date(int _year, int _month, int _day) :year(_year), month(_month), day(_day)
-	{
-	}
+	Date(int _year, int _month, int _day);
 
 	~Date() = default;
 	friend ostream& operator<<(ostream& out, const Date& date);
 	friend istream& operator>>(istream& in, Date& date);
 };
-
-ostream& operator<<(ostream& out, const Date& date)
-{
-	out << date.year << "-" << date.month << "-" << date.day;
-}
-
-istream& operator>>(istream& in, Date& date)
-{
-	in >> date.year >> date.month >> date.day;
-}
 
 class Student
 {
@@ -57,14 +45,9 @@ public:
 	type_birth birth;
 	type_phone phone;
 
-	Student() = default;
+	Student();
 	~Student() = default;
 
-	operator bool()
-	{
-		return !(name.empty() && id.empty() && schoolId.empty());
-	}
-
+	operator bool();
+	bool operator==(const Student& stu);
 };
-
-const Student Student::emptyStudent = Student();

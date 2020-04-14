@@ -1,10 +1,13 @@
 ﻿#include "studentInfoManager.h"
+#include"control.h"
 #include<iostream>
+#include<cstdlib>
 #include<string>
 
 using std::cin;
 using std::cout;
 using std::endl;
+using std::getline;
 
 void StudentInfoManager::init()
 {
@@ -13,31 +16,56 @@ void StudentInfoManager::init()
 
 void StudentInfoManager::printMenu()
 {
-
+	cout << "*****************" << endl;
+	cout << "1. 加载学生信息" << endl;
+	cout << "2. 查询学生信息" << endl;
+	cout << "3. 添加学生信息" << endl;
+	cout << "4. 保存到文件" << endl;
+	cout << "5. 退出系统" << endl;
+	cout << "*****************" << endl;
 }
 
-int StudentInfoManager::getOpt()
-{
-	int opt;
-	cin >> opt;
-	return opt;
-}
-
+/*
 void StudentInfoManager::optErro()
 {
-	cout << "！输入错误！" << endl;
+	cout << "输入错误！" << endl;
 }
+*/
 
 void StudentInfoManager::readFromFile()
 {
-	printf("输入文件名，默认为balabala.dat:");
+	clear();
+
+	cout << "从文件加载" << endl;
+	cout << "输入文件名:\n-->";
 	string fileName;
-	cin >> fileName;
-	base.readFromFile(fileName);
+	getline(cin, fileName);
+	if (fileName.empty())
+		fileName = "student.dat";//默认文件名
+	if (!checkFileName(fileName))
+	{
+		cout << "重新输入文件名:-->\n";
+	}
+	readFromFile(fileName);
 }
 
-void StudentInfoManager::saveTofile()
+bool StudentInfoManager::checkFileName(string fileName)
 {
+	return true;
+}
+
+void StudentInfoManager::saveToFile()
+{
+	printf("输入文件名:\n-->");
+	string fileName;
+	getline(cin, fileName);
+	if (fileName.empty())
+		fileName = "student.dat";//默认文件名
+	if (!checkFileName(fileName))
+	{
+		cout << "重新输入文件名:-->\n";
+	}
+	saveToFile(fileName);
 }
 
 void StudentInfoManager::printAll()
@@ -47,8 +75,9 @@ void StudentInfoManager::printAll()
 
 void StudentInfoManager::query()
 {
-	system("cls");
-	int opt = getOpt();
+	//clear();
+	int opt;
+	cin >> opt;
 	switch (opt)
 	{
 	case 0:
@@ -57,17 +86,17 @@ void StudentInfoManager::query()
 	}
 }
 
-void StudentInfoManager::Insert()
+void StudentInfoManager::insert()
 {
 }
 
-void StudentInfoManager::Erase()
+void StudentInfoManager::erase()
 {
 }
 
-void StudentInfoManager::SaveAndExit()
+void StudentInfoManager::saveAndExit()
 {
-	saveTofile();
+	saveToFile();
 }
 
 StudentInfoManager::StudentInfoManager()

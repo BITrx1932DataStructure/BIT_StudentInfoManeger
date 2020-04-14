@@ -1,5 +1,6 @@
-﻿#include<iostream>
-#include"studentInfoManager.h"
+﻿#include"studentInfoManager.h"
+#include"control.h"
+#include<iostream>
 
 using std::cin;
 using std::cout;
@@ -12,25 +13,28 @@ int main()
 	bool whileFlag = 1;//控制while循环
 	while (whileFlag)
 	{
-		system("cls");//清空控制台
+		clear();
 		stu.printMenu();//输出主菜单
-		int opt = stu.getOpt();//输入选项
+		int opt;
+		cin >> opt;//输入选项
+		getchar();
 		switch (opt)
 		{
-		case 0:
-			break;
 		case 1:
+			stu.readFromFile();
 			break;
 		case 2:
+
 			break;
 		case 3:
 
 			break;
 		case 4:
-
+			stu.saveToFile();
 			break;
-		default:
-
+		case 5:
+			stu.saveAndExit();
+			whileFlag = 0;
 			break;
 		}
 	}

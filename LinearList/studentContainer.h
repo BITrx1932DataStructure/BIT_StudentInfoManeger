@@ -1,4 +1,5 @@
 ﻿#pragma once
+
 #include"vector.h"
 #include"student.h"
 

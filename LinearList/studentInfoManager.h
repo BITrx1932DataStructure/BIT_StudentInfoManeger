@@ -1,29 +1,49 @@
 ﻿#pragma once
+
 #include<string>
 #include"student.h"
 #include"studentContainer.h"
 
 class StudentInfoManager :StudentContainer
 {
+	using StudentContainer::insert;
+	using StudentContainer::erase;
+	using StudentContainer::readFromFile;
+	using StudentContainer::saveToFile;
 public:
-	void init();//初始化
-	void printMenu();//输出主菜单
-	int getOpt();//输入选项
-	void optErro();//选项错误时执行该函数
+	//初始化
+	void init();
 
-	void readFromFile();//从文件读取
-	void printAll();//输出所有学生
-	void query();//查询（先查绚，再选择修改或删除或什么也不做）
-	void Insert();//增加学生
-	void SaveAndExit();//保存并退出
+	//输出主菜单
+	void printMenu();
+
+	//选项错误时执行该函数
+	//void optErro();
+
+	//从文件读取
+	void readFromFile();
+
+	//输出所有学生
+	void printAll();
+
+	//查询（先查绚，再选择修改或删除或什么也不做）
+	void query();
+
+	//增加学生
+	void insert();
+
+	//保存到文件
+	void saveToFile();
+
+	//保存并退出
+	void saveAndExit();
 
 	StudentInfoManager();
 	~StudentInfoManager() = default;
 private:
-	StudentContainer base;
 
-	void saveTofile();//保存到文件
-	void Erase();//删除学生
+	bool checkFileName(string fileName);
+	void erase();//删除学生
 	void queryByName();//通过姓名查询
 	void queryById();//通过身份证号查询
 	void queryBySchoolIDd();//通过学号查询
