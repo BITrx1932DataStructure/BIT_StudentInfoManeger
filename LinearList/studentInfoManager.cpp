@@ -57,11 +57,11 @@ void StudentInfoManager::query()
 	}
 }
 
-void StudentInfoManager::insert()
+void StudentInfoManager::Insert()
 {
 }
 
-void StudentInfoManager::erase()
+void StudentInfoManager::Erase()
 {
 }
 
