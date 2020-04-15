@@ -89,15 +89,60 @@ void StudentInfoManager::query()
 	case 1:
 		cout << "请选择查询方式" << endl;
 		cout << "1.以姓名查询" << endl;
+		cout << "2.以身份证号查询" << endl;
+		cout << "3,以学号查询" << endl;
 		cin >> opt2;
-		getchar();
 		switch (opt2)
 		{
 		case 1:
-			string name;
-			getline(cin,name);
-			queryByName(name);
+		{string name;
+		cin >> name;
+		Student temp;
+		temp=queryByName(name);
+		if (temp.name == "default")
+		{
+			cout << "该生不存在,输入任意字符后回车退出" << endl; 
+			cin >> name;
+			name = '\0';
 		}
+		else
+			printStudent(temp);
+		break;
+		}
+
+		case 2:
+		{string ID;
+		cin >> ID;
+		Student temp;
+		temp=queryById(ID);
+		if (temp.id == "default")
+		{
+			cout << "该生不存在,输入任意字符后回车退出" << endl; 
+			cin >> ID;
+			ID = '\0';
+		}
+		else
+			printStudent(temp);
+		break;
+		}
+
+		case 3:
+		{string SchoolID;
+		cin >> SchoolID;
+		Student temp;
+		temp=queryBySchoolId(SchoolID);
+		if (temp.schoolId == "default")
+		{
+			cout << "该生不存在,输入任意字符后回车退出" << endl;
+			cin >> SchoolID;
+			SchoolID = '\0';
+		}
+		else
+			printStudent(temp);
+		break;
+		}
+		}
+		
 	}
 }
 
@@ -133,7 +178,14 @@ void StudentInfoManager::queryBySchoolIDd()
 
 void StudentInfoManager::printStudent(const Student& student)
 {
-
+	cout << student.name << endl;
+	cout << student.id << endl;
+	cout << student.schoolId << endl;
+	cout << student.sex<< endl;
+	cout << student.address<< endl;
+	cout << student.age<< endl;
+	cout << student.birth<< endl;
+	cout << student.phone<< endl;
 }
 
 
