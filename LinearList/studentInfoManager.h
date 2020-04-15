@@ -11,8 +11,8 @@ class StudentInfoManager :StudentContainer
 	using StudentContainer::readFromFile;
 	using StudentContainer::saveToFile;
 	using StudentContainer::queryByName;
-	using StudentContainer::queryByName;
-	using StudentContainer::queryByName;
+	using StudentContainer::queryById;
+	using StudentContainer::queryBySchoolId;
 public:
 	//初始化
 	void init();

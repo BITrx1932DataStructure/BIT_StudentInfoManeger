@@ -90,10 +90,13 @@ void StudentInfoManager::query()
 		cout << "请选择查询方式" << endl;
 		cout << "1.以姓名查询" << endl;
 		cin >> opt2;
+		getchar();
 		switch (opt2)
 		{
 		case 1:
-
+			string name;
+			getline(cin,name);
+			queryByName(name);
 		}
 	}
 }
@@ -117,9 +120,7 @@ StudentInfoManager::StudentInfoManager()
 }
 void StudentInfoManager::queryByName()
 {
-	string name;
-	getline(cin, name);
-	queryByName(name);
+	
 }
 void StudentInfoManager::queryById()
 {
@@ -132,6 +133,7 @@ void StudentInfoManager::queryBySchoolIDd()
 
 void StudentInfoManager::printStudent(const Student& student)
 {
+
 }
 
 
