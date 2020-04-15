@@ -24,7 +24,7 @@ int main()
 			stu.readFromFile();
 			break;
 		case 2:
-
+			stu.query();
 			break;
 		case 3:
 
@@ -40,3 +40,5 @@ int main()
 	}
 	return 0;
 }
+
+

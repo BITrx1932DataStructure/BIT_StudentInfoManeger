@@ -1,4 +1,5 @@
 ﻿#include "studentInfoManager.h"
+#include"studentContainer.h"
 #include"control.h"
 #include<iostream>
 #include<cstdlib>
@@ -75,21 +76,79 @@ void StudentInfoManager::printAll()
 
 void StudentInfoManager::query()
 {
+	cout << "请选择需执行的操作" << endl;
+	cout << "0.返回     1.查询学生信息" << endl;
 	//clear();
-	int opt;
-
-	cin >> opt;
-	switch (opt)
+	int opt1,opt2;
+	cin >> opt1;
+	switch (opt1)
 	{
-	case 1:
-
+	case 0:
+		readFromFile();
 		break;
-	}
+	case 1:
+		cout << "请选择查询方式" << endl;
+		cout << "1.以姓名查询" << endl;
+		cout << "2.以身份证号查询" << endl;
+		cout << "3,以学号查询" << endl;
+		cin >> opt2;
+		switch (opt2)
+		{
+		case 1:
+		{string name;
+		cin >> name;
+		Student temp;
+		temp=queryByName(name);
+		if (temp.name == "default")
+		{
+			cout << "该生不存在,输入任意字符后回车退出" << endl; 
+			cin >> name;
+			name = '\0';
+		}
+		else
+			printStudent(temp);
+		break;
+		}
 
+		case 2:
+		{string ID;
+		cin >> ID;
+		Student temp;
+		temp=queryById(ID);
+		if (temp.id == "default")
+		{
+			cout << "该生不存在,输入任意字符后回车退出" << endl; 
+			cin >> ID;
+			ID = '\0';
+		}
+		else
+			printStudent(temp);
+		break;
+		}
+
+		case 3:
+		{string SchoolID;
+		cin >> SchoolID;
+		Student temp;
+		temp=queryBySchoolId(SchoolID);
+		if (temp.schoolId == "default")
+		{
+			cout << "该生不存在,输入任意字符后回车退出" << endl;
+			cin >> SchoolID;
+			SchoolID = '\0';
+		}
+		else
+			printStudent(temp);
+		break;
+		}
+		}
+		
+	}
 }
 
 void StudentInfoManager::insert()
 {
+
 }
 
 void StudentInfoManager::erase()
@@ -104,12 +163,10 @@ void StudentInfoManager::saveAndExit()
 StudentInfoManager::StudentInfoManager()
 {
 }
-
 void StudentInfoManager::queryByName()
 {
-
+	
 }
-
 void StudentInfoManager::queryById()
 {
 }
@@ -121,6 +178,14 @@ void StudentInfoManager::queryBySchoolIDd()
 
 void StudentInfoManager::printStudent(const Student& student)
 {
+	cout << student.name << endl;
+	cout << student.id << endl;
+	cout << student.schoolId << endl;
+	cout << student.sex<< endl;
+	cout << student.address<< endl;
+	cout << student.age<< endl;
+	cout << student.birth<< endl;
+	cout << student.phone<< endl;
 }
 
 
