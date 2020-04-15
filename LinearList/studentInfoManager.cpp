@@ -77,13 +77,15 @@ void StudentInfoManager::query()
 {
 	//clear();
 	int opt;
+
 	cin >> opt;
 	switch (opt)
 	{
-	case 0:
-		readFromFile();
+	case 1:
+
 		break;
 	}
+
 }
 
 void StudentInfoManager::insert()

@@ -36,7 +36,7 @@ istream& operator>>(istream& in, Date& date)
 
 Student::operator bool()
 {
-	return !(name.empty() && id.empty() && schoolId.empty());
+	return !(*this == emptyStudent);
 }
 
 bool Student::operator==(const Student& stu)

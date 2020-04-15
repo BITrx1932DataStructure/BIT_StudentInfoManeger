@@ -13,10 +13,10 @@ public:
 	Student queryByName(string Name);
 	Student queryById(string ID);
 	Student queryBySchoolId(string SchoolID);
-	void erase(Student student);;
-	void insert(Student student);;
-	void readFromFile(string fileName);;
-	void saveToFile(string fileName);;
+	void erase(Student student);
+	void insert(Student student);
+	void readFromFile(string fileName);
+	void saveToFile(string fileName);
 
 private:
 };
