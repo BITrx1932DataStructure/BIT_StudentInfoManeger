@@ -10,6 +10,9 @@ class StudentInfoManager :StudentContainer
 	using StudentContainer::erase;
 	using StudentContainer::readFromFile;
 	using StudentContainer::saveToFile;
+	using StudentContainer::queryByName;
+	using StudentContainer::queryByName;
+	using StudentContainer::queryByName;
 public:
 	//初始化
 	void init();

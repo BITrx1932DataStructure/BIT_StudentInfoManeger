@@ -1,4 +1,5 @@
 ﻿#include "studentInfoManager.h"
+#include"studentContainer.h"
 #include"control.h"
 #include<iostream>
 #include<cstdlib>
@@ -75,19 +76,31 @@ void StudentInfoManager::printAll()
 
 void StudentInfoManager::query()
 {
+	cout << "请选择需执行的操作" << endl;
+	cout << "0.返回     1.查询学生信息" << endl;
 	//clear();
-	int opt;
-	cin >> opt;
-	switch (opt)
+	int opt1,opt2;
+	cin >> opt1;
+	switch (opt1)
 	{
 	case 0:
 		readFromFile();
 		break;
+	case 1:
+		cout << "请选择查询方式" << endl;
+		cout << "1.以姓名查询" << endl;
+		cin >> opt2;
+		switch (opt2)
+		{
+		case 1:
+
+		}
 	}
 }
 
 void StudentInfoManager::insert()
 {
+
 }
 
 void StudentInfoManager::erase()
@@ -102,12 +115,12 @@ void StudentInfoManager::saveAndExit()
 StudentInfoManager::StudentInfoManager()
 {
 }
-
 void StudentInfoManager::queryByName()
 {
-
+	string name;
+	getline(cin, name);
+	queryByName(name);
 }
-
 void StudentInfoManager::queryById()
 {
 }
