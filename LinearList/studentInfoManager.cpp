@@ -151,6 +151,7 @@ void StudentInfoManager::insert()
 	Student student;
 	cout << "姓名：" << endl;
 	getline(cin, student.name);
+	//TODO:输入其他数据项
 	insert(student);
 }
 
@@ -167,6 +168,7 @@ void StudentInfoManager::erase()
 
 void StudentInfoManager::edit()
 {
+	//TODO:修改thisStudent指向的内容
 }
 
 void StudentInfoManager::saveAndExit()
