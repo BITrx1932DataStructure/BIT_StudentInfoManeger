@@ -1,5 +1,6 @@
 ﻿#include "studentInfoManager.h"
-#include"studentContainer.h"
+#include<conio.h>
+//#include"studentContainer.h"
 #include"control.h"
 #include<iostream>
 #include<cstdlib>
@@ -50,6 +51,21 @@ void StudentInfoManager::readFromFile()
 	readFromFile(fileName);
 }
 
+void StudentInfoManager::afterQuery()
+{
+	cout << "1.继续查询" << endl;
+	cout << "2.修改信息" << endl;
+	cout << "3.删除学生" << endl;
+	cout << "4.返回菜单" << endl;
+	//TODO 完成afterQuery函数
+}
+
+void StudentInfoManager::studentNotExist()
+{
+	cout << "所查询的学生不存在\n敲击键盘退出.." << endl;
+	_getch();
+}
+
 bool StudentInfoManager::checkFileName(string fileName)
 {
 	return true;
@@ -76,74 +92,26 @@ void StudentInfoManager::printAll()
 
 void StudentInfoManager::query()
 {
-	cout << "请选择需执行的操作" << endl;
-	cout << "0.返回     1.查询学生信息" << endl;
 	//clear();
-	int opt1,opt2;
-	cin >> opt1;
-	switch (opt1)
+	int opt;
+	cout << "请选择查询方式" << endl;
+	cout << "1.以姓名查询" << endl;
+	cout << "2.以身份证号查询" << endl;
+	cout << "3.以学号查询" << endl;
+	cin >> opt;
+	switch (opt)
 	{
-	case 0:
-		readFromFile();
-		break;
 	case 1:
-		cout << "请选择查询方式" << endl;
-		cout << "1.以姓名查询" << endl;
-		cout << "2.以身份证号查询" << endl;
-		cout << "3,以学号查询" << endl;
-		cin >> opt2;
-		switch (opt2)
-		{
-		case 1:
-		{string name;
-		cin >> name;
-		Student temp;
-		temp=queryByName(name);
-		if (temp.name == "default")
-		{
-			cout << "该生不存在,输入任意字符后回车退出" << endl; 
-			cin >> name;
-			name = '\0';
-		}
-		else
-			printStudent(temp);
+		queryByName();
 		break;
-		}
-
-		case 2:
-		{string ID;
-		cin >> ID;
-		Student temp;
-		temp=queryById(ID);
-		if (temp.id == "default")
-		{
-			cout << "该生不存在,输入任意字符后回车退出" << endl; 
-			cin >> ID;
-			ID = '\0';
-		}
-		else
-			printStudent(temp);
+	case 2:
+		queryById();
 		break;
-		}
-
-		case 3:
-		{string SchoolID;
-		cin >> SchoolID;
-		Student temp;
-		temp=queryBySchoolId(SchoolID);
-		if (temp.schoolId == "default")
-		{
-			cout << "该生不存在,输入任意字符后回车退出" << endl;
-			cin >> SchoolID;
-			SchoolID = '\0';
-		}
-		else
-			printStudent(temp);
+	case 3:
+		queryBySchoolId();
 		break;
-		}
-		}
-		
 	}
+
 }
 
 void StudentInfoManager::insert()
@@ -165,15 +133,37 @@ StudentInfoManager::StudentInfoManager()
 }
 void StudentInfoManager::queryByName()
 {
-	
+	string name;
+	cin >> name;
+	Student temp;
+	temp = queryByName(name);
+	if (temp.name == "default")
+		studentNotExist();
+	else
+		printStudent(temp);
 }
 void StudentInfoManager::queryById()
 {
+	string ID;
+	cin >> ID;
+	Student temp;
+	temp = queryById(ID);
+	if (temp.id == "default")
+		studentNotExist();
+	else
+		printStudent(temp);
 }
 
-void StudentInfoManager::queryBySchoolIDd()
+void StudentInfoManager::queryBySchoolId()
 {
-
+	string SchoolID;
+	cin >> SchoolID;
+	Student temp;
+	temp = queryBySchoolId(SchoolID);
+	if (temp.schoolId == "default")
+		studentNotExist();
+	else
+		printStudent(temp);
 }
 
 void StudentInfoManager::printStudent(const Student& student)
@@ -181,11 +171,11 @@ void StudentInfoManager::printStudent(const Student& student)
 	cout << student.name << endl;
 	cout << student.id << endl;
 	cout << student.schoolId << endl;
-	cout << student.sex<< endl;
-	cout << student.address<< endl;
-	cout << student.age<< endl;
-	cout << student.birth<< endl;
-	cout << student.phone<< endl;
+	cout << student.sex << endl;
+	cout << student.address << endl;
+	cout << student.age << endl;
+	cout << student.birth << endl;
+	cout << student.phone << endl;
 }
 
 

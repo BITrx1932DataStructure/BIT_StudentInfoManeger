@@ -10,9 +10,9 @@ class StudentContainer :Container
 {
 	using Container::erase;
 public:
-	Student queryByName(string Name);
-	Student queryById(string ID);
-	Student queryBySchoolId(string SchoolID);
+	Student& queryByName(string Name);
+	Student& queryById(string ID);
+	Student& queryBySchoolId(string SchoolID);
 	void erase(Student student);
 	void insert(Student student);
 	void readFromFile(string fileName);

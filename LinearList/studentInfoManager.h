@@ -45,10 +45,12 @@ public:
 	~StudentInfoManager() = default;
 private:
 
+	void afterQuery();
+	void studentNotExist();
 	bool checkFileName(string fileName);
 	void erase();//删除学生
 	void queryByName();//通过姓名查询
 	void queryById();//通过身份证号查询
-	void queryBySchoolIDd();//通过学号查询
+	void queryBySchoolId();//通过学号查询
 	void printStudent(const Student& student);//输出学生信息
 };
