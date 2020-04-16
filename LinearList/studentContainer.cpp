@@ -54,12 +54,8 @@ void StudentContainer::readFromFile(string fileName)
 		return;
 	};
 	Student tempStudent;
-	while (fin >> tempStudent.name)
-	{
-		fin >> tempStudent.id >> tempStudent.schoolId >> tempStudent.sex
-			>> tempStudent.address >> tempStudent.age >> tempStudent.birth >> tempStudent.phone;
+	while (fin >> tempStudent)
 		push_back(tempStudent);
-	}
 	fin.close();
 }
 
@@ -67,16 +63,6 @@ void StudentContainer::saveToFile(string fileName)
 {
 	ofstream fout(fileName);
 	for (auto p = begin(); p != end(); p++)
-	{
-		fout << p->name << " ";
-		fout << p->id << " ";
-		fout << p->schoolId << " ";
-		fout << p->sex << " ";
-		fout << p->address << " ";
-		fout << p->age << " ";
-		fout << p->birth << " ";
-		fout << p->phone << " ";
-		fout << endl;
-	}
+		fout << (*p) << endl;
 	fout.close();
 }

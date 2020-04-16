@@ -14,7 +14,7 @@ public:
 	int month;
 	int day;
 
-	Date() = default;
+	Date();
 
 	Date(int _year, int _month, int _day);
 
@@ -50,4 +50,6 @@ public:
 
 	operator bool();
 	bool operator==(const Student& stu);
+	friend ostream& operator<<(ostream& out, const Student& stu);
+	friend istream& operator>>(istream& in, Student& stu);
 };
