@@ -46,7 +46,7 @@ public:
 	type_phone phone;
 
 	Student();
-	~Student() = default;
+	~Student();
 
 	operator bool();
 	bool operator==(const Student& stu);

@@ -6,6 +6,9 @@
 
 class StudentInfoManager :StudentContainer
 {
+public:
+	using StudentContainer::iterator;
+private:
 	using StudentContainer::insert;
 	using StudentContainer::erase;
 	using StudentContainer::readFromFile;
@@ -49,8 +52,13 @@ private:
 	void studentNotExist();
 	bool checkFileName(string fileName);
 	void erase();//删除学生
-	void queryByName();//通过姓名查询
-	void queryById();//通过身份证号查询
-	void queryBySchoolId();//通过学号查询
-	void printStudent(const Student& student);//输出学生信息
+	void edit();//修改学生
+	iterator queryByName();//通过姓名查询
+	iterator queryById();//通过身份证号查询
+	iterator queryBySchoolId();//通过学号查询
+	void printStudent(iterator it);//输出学生信息
+	void printQueryMenu();
+	void printAfterQueryMenu();
+
+	iterator thisStudent;
 };

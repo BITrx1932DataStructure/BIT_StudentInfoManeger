@@ -61,7 +61,8 @@ namespace fy
 			assert(new_capacity >= size());
 			size_t _size = std::min(size(), new_capacity);
 			T* new_begin = new T[new_capacity];
-			memcpy(new_begin, _begin, _size * sizeof(T));
+			for (int i = 0; i < _size; i++)
+				*(new_begin + i) = *(_begin + i);
 			delete[] _begin;
 			_begin = new_begin;
 			_end = new_begin + _size;
@@ -140,7 +141,8 @@ namespace fy
 			return _end == _begin;
 		}
 
-		iterator find(const value_type& value)//查询，返回迭代器
+		template<typename key_T>
+		iterator find(const key_T& value)//查询，返回迭代器
 		{
 			iterator it;
 			for (it = begin(); it != end(); it++)
@@ -171,7 +173,7 @@ namespace fy
 		{
 			if (it == _end)
 				return;
-			while (it != _end)
+			while (it + 1 != _end)
 			{
 				*it = *(it + 1);
 				it++;

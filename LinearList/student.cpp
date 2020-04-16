@@ -5,15 +5,20 @@ Date::Date(int _year, int _month, int _day) :year(_year), month(_month), day(_da
 }
 
 Student::Student() :
-	name("default"),
-	id("default"),
-	schoolId("default"),
-	sex("default"),
-	address("default"),
+	name("NONE"),
+	id("NONE"),
+	schoolId("NONE"),
+	sex("NONE"),
+	address("NONE"),
 	age(0),
 	birth(),
-	phone("default")
+	phone("NONE")
 {
+}
+
+Student::~Student()
+{
+
 }
 
 const Student Student::emptyStudent = Student();
@@ -21,8 +26,8 @@ const Student Student::emptyStudent = Student();
 ostream& operator<<(ostream& out, const Date& date)
 {
 	out << date.year;
-	out << "-" << date.month;
-	out << "-" << date.day;
+	out << date.month;
+	out << date.day;
 	return out;
 }
 

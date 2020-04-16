@@ -8,40 +8,28 @@ using std::ofstream;
 using std::endl;
 using std::cout;
 
-Student StudentContainer::queryByName(string name)
+StudentContainer::iterator StudentContainer::queryByName(string name)
 {
 	for (auto p = begin(); p != end(); p++)
-	{
 		if (p->name == name)
-		{
-			return *p;
-		}
-	}
-	return Student::emptyStudent;
+			return p;
+	return nullptr;
 }
 
-Student StudentContainer::queryById(string ID)
+StudentContainer::iterator StudentContainer::queryById(string ID)
 {
 	for (auto p = begin(); p != end(); p++)
-	{
 		if (p->id == ID)
-		{
-			return *p;
-		}
-	}
-	return Student::emptyStudent;
+			return p;
+	return nullptr;
 }
 
-Student StudentContainer::queryBySchoolId(string SchoolID)
+StudentContainer::iterator StudentContainer::queryBySchoolId(string SchoolID)
 {
 	for (auto p = begin(); p != end(); p++)
-	{
 		if (p->schoolId == SchoolID)
-		{
-			return *p;
-		}
-	}
-	return Student::emptyStudent;
+			return p;
+	return nullptr;
 }
 
 void StudentContainer::erase(Student student)
@@ -59,21 +47,18 @@ void StudentContainer::insert(Student student)
 void StudentContainer::readFromFile(string fileName)
 {
 	ifstream fin(fileName);
-	if (empty())
+	if (!fin.is_open())
 	{
-		if (!fin.is_open())
-		{
-			cout << "文件打开错误" << endl;
-			_getch();
-			return;
-		};
-		Student tempStudent;
-		while (fin >> tempStudent.name);
-		{
-			fin >> tempStudent.id >> tempStudent.schoolId >> tempStudent.sex
-				>> tempStudent.address >> tempStudent.age >> tempStudent.birth >> tempStudent.phone;
-			push_back(tempStudent);
-		}
+		cout << "文件打开错误" << endl;
+		_getch();
+		return;
+	};
+	Student tempStudent;
+	while (fin >> tempStudent.name)
+	{
+		fin >> tempStudent.id >> tempStudent.schoolId >> tempStudent.sex
+			>> tempStudent.address >> tempStudent.age >> tempStudent.birth >> tempStudent.phone;
+		push_back(tempStudent);
 	}
 	fin.close();
 }
@@ -84,6 +69,7 @@ void StudentContainer::saveToFile(string fileName)
 	for (auto p = begin(); p != end(); p++)
 	{
 		fout << p->name << " ";
+		fout << p->id << " ";
 		fout << p->schoolId << " ";
 		fout << p->sex << " ";
 		fout << p->address << " ";

@@ -1,7 +1,7 @@
 ﻿#include "control.h"
 #include<cstdlib> 
 
-void clear()
+void clearCmd()
 {
 	system("cls");
 }

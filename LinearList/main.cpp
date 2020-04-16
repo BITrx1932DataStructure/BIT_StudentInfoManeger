@@ -13,7 +13,7 @@ int main()
 	bool whileFlag = 1;//控制while循环
 	while (whileFlag)
 	{
-		clear();
+		clearCmd();
 		stu.printMenu();//输出主菜单
 		int opt;
 		cin >> opt;//输入选项
@@ -27,7 +27,7 @@ int main()
 			stu.query();
 			break;
 		case 3:
-
+			stu.insert();
 			break;
 		case 4:
 			stu.saveToFile();
