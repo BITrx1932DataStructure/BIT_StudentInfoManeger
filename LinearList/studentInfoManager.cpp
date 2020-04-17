@@ -13,6 +13,7 @@ using std::getline;
 void StudentInfoManager::init()
 {
 	system("color F0");//设置为白底黑字
+	system("title 学生信息管理系统 v1.0");
 	readFromFile("student.dat");
 }
 
