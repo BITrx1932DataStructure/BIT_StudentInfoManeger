@@ -1,10 +1,10 @@
 ﻿#include "student.h"
 
-Date::Date():year(1234),month(56),day(78)
+Date::Date() :year(1234), month(56), day(78)
 {
 }
 
-Date::Date(int _year, int _month, int _day) :year(_year), month(_month), day(_day)
+Date::Date(int _year, int _month, int _day) : year(_year), month(_month), day(_day)
 {
 }
 
@@ -40,6 +40,7 @@ istream& operator>>(istream& in, Date& date)
 	in >> date.year;
 	in >> date.month;
 	in >> date.day;
+	in.get();
 	return in;
 }
 
