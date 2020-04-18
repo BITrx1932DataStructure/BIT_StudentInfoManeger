@@ -152,6 +152,20 @@ void StudentInfoManager::insert()
 	Student student;
 	cout << "姓名：" << endl;
 	getline(cin, student.name);
+	cout << "身份证号：" << endl;
+	getline(cin, student.id);
+	cout << "学号：" << endl;
+	getline(cin, student.schoolId);
+	cout << "性别：" << endl;
+	getline(cin, student.sex);
+	cout << "地址：" << endl;
+	getline(cin, student.address);
+	cout << "年龄：" << endl;
+	cin >> student.age;
+	cout << "生日：" << endl;
+	cin >> student.birth;
+	cout << "电话号码：" << endl;
+	getline(cin, student.phone);
 	//TODO:输入其他数据项
 	insert(student);
 }
