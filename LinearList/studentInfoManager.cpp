@@ -56,26 +56,21 @@ void StudentInfoManager::readFromFile()
 
 void StudentInfoManager::afterQuery()
 {
-	int whileFlag = 1;
 	int opt;
-	while (whileFlag)
+	clearCmd();
+	printStudent(thisStudent);
+	printAfterQueryMenu();
+	cin >> opt;
+	switch (opt)
 	{
-		clearCmd();
-		printStudent(thisStudent);
-		printAfterQueryMenu();
-		cin >> opt;
-		switch (opt)
-		{
-		case 1:
-			whileFlag = 0;
-			break;
-		case 2:
-			edit();
-			break;
-		case 3:
-			erase();
-			break;
-		}
+	case 1:
+		break;
+	case 2:
+		edit();
+		break;
+	case 3:
+		erase();
+		break;
 	}
 }
 
@@ -153,7 +148,8 @@ void StudentInfoManager::insert()
 {
 	Student student;
 	cout << "姓名：" << endl;
-	getline(cin, student.name);
+	cin >> student.name;
+	getchar();
 	cout << "身份证号：" << endl;
 	getline(cin, student.id);
 	cout << "学号：" << endl;
@@ -163,9 +159,9 @@ void StudentInfoManager::insert()
 	cout << "地址：" << endl;
 	getline(cin, student.address);
 	cout << "年龄：" << endl;
-	cin >> student.age;
+	getline(cin, student.age);
 	cout << "生日：" << endl;
-	cin >> student.birth;
+	getline(cin, student.birth);
 	cout << "电话号码：" << endl;
 	getline(cin, student.phone);
 	//TODO:输入其他数据项
@@ -175,7 +171,7 @@ void StudentInfoManager::insert()
 void StudentInfoManager::erase()
 {
 	cout << "即将删除学生：";
-	printStudent(thisStudent);
+	//printStudent(thisStudent);
 	cout << "Y/N?" << endl;
 	char opt;
 	cin >> opt;
