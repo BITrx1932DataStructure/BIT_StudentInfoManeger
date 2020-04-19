@@ -14,7 +14,9 @@ void StudentInfoManager::init()
 {
 	system("color F0");//设置为白底黑字
 	system("title 学生信息管理系统 v1.0");
+	cout << "加载中..." << endl;
 	readFromFile("student.dat");
+	cout << "成功加载" << size() << "个学生信息" << endl;
 }
 
 void StudentInfoManager::printMenu()
@@ -219,13 +221,21 @@ StudentInfoManager::iterator StudentInfoManager::queryBySchoolId()
 
 void StudentInfoManager::printStudent(StudentInfoManager::iterator it)
 {
+	cout << "    姓名：";
 	cout << it->name << endl;
+	cout << "身份证号：";
 	cout << it->id << endl;
+	cout << "    学号：";
 	cout << it->schoolId << endl;
+	cout << "    性别：";
 	cout << it->sex << endl;
+	cout << "    地址：";
 	cout << it->address << endl;
+	cout << "    年龄：";
 	cout << it->age << endl;
+	cout << "    生日：";
 	cout << it->birth << endl;
+	cout << "    电话号码：";
 	cout << it->phone << endl;
 }
 
