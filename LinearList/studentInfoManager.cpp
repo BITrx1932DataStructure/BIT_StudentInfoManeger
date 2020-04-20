@@ -183,6 +183,54 @@ void StudentInfoManager::erase()
 
 void StudentInfoManager::edit()
 {
+	int m, n = 1;
+	while (n == 1)
+	{
+		cout << "请输入相应序号，选择要修改的内容" << endl;
+		cout << "1.姓名" << endl;
+		cout << "2.身份证号" << endl;
+		cout << "3.学号" << endl;
+		cout << "4.性别" << endl;
+		cout << "5.地址" << endl;
+		cout << "6.年龄" << endl;
+		cout << "7.生日" << endl;
+		cout << "8.电话号码" << endl;
+		cout << "9.取消修改" << endl;
+		cin >> m;
+		switch (m)
+		{
+		case 1:
+			cin >> thisStudent->name;
+			break;
+		case 2:
+			cin >> thisStudent->id;
+			break;
+		case 3:
+			cin >> thisStudent->schoolId;
+			break;
+		case 4:
+			cin >> thisStudent->sex;
+			break;
+		case 5:
+			cin >> thisStudent->address;
+			break;
+		case 6:
+			cin >> thisStudent->age;
+			break;
+		case 7:
+			cin >> thisStudent->birth;
+			break;
+		case 8:
+			cin >> thisStudent->phone;
+			break;
+		case 9:
+			break;
+		}
+		if (m != 9)
+			cout << "修改成功" << endl;
+		cout << "是否继续修改本学生数据？\n继续修改，请输入1；保存修改，请输入0" << endl;
+		cin >> n;
+	}
 	//TODO:修改thisStudent指向的内容
 }
 
