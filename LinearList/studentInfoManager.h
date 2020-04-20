@@ -8,6 +8,7 @@ class StudentInfoManager :StudentContainer
 {
 public:
 	using StudentContainer::iterator;
+	using StudentContainer::size;
 private:
 	using StudentContainer::insert;
 	using StudentContainer::erase;
@@ -17,6 +18,7 @@ private:
 	using StudentContainer::queryById;
 	using StudentContainer::queryBySchoolId;
 public:
+
 	//初始化
 	void init();
 

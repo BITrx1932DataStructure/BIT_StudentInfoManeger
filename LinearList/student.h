@@ -29,8 +29,8 @@ class Student
 	using type_id = string;
 	using type_sex = string;
 	using type_address = string;
-	using type_age = unsigned int;
-	using type_birth = Date;
+	using type_age = string;
+	using type_birth = string;
 	using type_phone = string;
 	using type_schoolId = string;
 

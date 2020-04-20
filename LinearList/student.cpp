@@ -8,15 +8,7 @@ Date::Date(int _year, int _month, int _day) : year(_year), month(_month), day(_d
 {
 }
 
-Student::Student() :
-	name("NONE"),
-	id("NONE"),
-	schoolId("NONE"),
-	sex("NONE"),
-	address("NONE"),
-	age(0),
-	birth(),
-	phone("NONE")
+Student::Student()
 {
 }
 
@@ -46,28 +38,30 @@ istream& operator>>(istream& in, Date& date)
 
 ostream& operator<<(ostream& out, const Student& stu)
 {
-	out << stu.name << " ";
-	out << stu.id << " ";
-	out << stu.schoolId << " ";
-	out << stu.sex << " ";
-	out << stu.age << " ";
-	out << stu.address << " ";
-	out << stu.birth << " ";
-	out << stu.phone;
+	using std::endl;
+	out << stu.name << endl;
+	out << stu.id << endl;
+	out << stu.schoolId << endl;
+	out << stu.sex << endl;
+	out << stu.age << endl;
+	out << stu.address << endl;
+	out << stu.birth << endl;
+	out << stu.phone << endl;
 
 	return out;
 }
 
 istream& operator>>(istream& in, Student& stu)
 {
-	in >> stu.name;
-	in >> stu.id;
-	in >> stu.schoolId;
-	in >> stu.sex;
+
+	getline(in, stu.name);
+	getline(in, stu.id);
+	getline(in, stu.schoolId);
+	getline(in, stu.sex);
+	getline(in, stu.address);
 	in >> stu.age;
-	in >> stu.address;
 	in >> stu.birth;
-	in >> stu.phone;
+	getline(in, stu.phone);
 
 	return in;
 }

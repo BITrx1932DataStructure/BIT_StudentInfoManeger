@@ -9,6 +9,7 @@ class StudentContainer :Container
 {
 public:
 	using Container::iterator;
+	using Container::size;
 private:
 	using Container::erase;
 public:
