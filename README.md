@@ -1,5 +1,2 @@
-# DataStructure
-
-> 地址 https://github.com/BITrx1932DataStructure/DataStructure
-
-## **1** 线性表LinearList
+## 北京理工大学 数据结构A 大作业一
+## 学生成绩管理系统
