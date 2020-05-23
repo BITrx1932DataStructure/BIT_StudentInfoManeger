@@ -77,7 +77,7 @@ void StudentInfoManager::afterQuery()
 void StudentInfoManager::studentNotExist()
 {
 	cout << "所查询的学生不存在\n敲击键盘退出.." << endl;
-	getchar();
+	_getch();
 }
 
 bool StudentInfoManager::checkFileName(string fileName)

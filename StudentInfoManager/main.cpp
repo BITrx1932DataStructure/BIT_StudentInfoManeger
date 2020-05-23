@@ -1,19 +1,13 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
-#include"studentInfoManager.h"
+﻿#include"studentInfoManager.h"
 #include"control.h"
 #include<iostream>
-#include<stdio.h>
-#include<time.h>
+
 using std::cin;
 using std::cout;
 using std::endl;
 
 int main()
 {
-	
-	freopen("C:\\Users\\asus\\Desktop\\xueshengkongzhi.txt", "r",stdin);
-	//freopen("C:\\Users\\asus\\Desktop\\shuchu.txt", "w", stdout);
-	int Ti_me1 = clock();
 	StudentInfoManager stu;
 	stu.init();//初始化
 	bool whileFlag = 1;//控制while循环
@@ -43,12 +37,7 @@ int main()
 			whileFlag = 0;
 			break;
 		}
-		
 	}
-	fclose(stdin);
-	//fclose(stdout);
-	int Ti_me2 = clock();
-	cout << Ti_me2 - Ti_me1;
 	return 0;
 }
 
