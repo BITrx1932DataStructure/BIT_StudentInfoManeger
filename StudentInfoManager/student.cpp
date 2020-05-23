@@ -59,8 +59,8 @@ istream& operator>>(istream& in, Student& stu)
 	getline(in, stu.schoolId);
 	getline(in, stu.sex);
 	getline(in, stu.address);
-	in >> stu.age;
-	in >> stu.birth;
+	getline(in, stu.age);
+	getline(in, stu.birth);
 	getline(in, stu.phone);
 
 	return in;
