@@ -48,6 +48,8 @@ public:
 	Student();
 	~Student();
 
+	string to_string() const;
+
 	operator bool();
 	bool operator==(const Student& stu);
 	friend ostream& operator<<(ostream& out, const Student& stu);

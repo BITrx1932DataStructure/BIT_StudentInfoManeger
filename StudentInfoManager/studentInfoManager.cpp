@@ -15,7 +15,7 @@ void StudentInfoManager::init()
 	system("color F0");//设置为白底黑字
 	system("title 学生信息管理系统 v1.0");
 	cout << "加载中..." << endl;
-	readFromFile("student_fu*k.dat");
+	readFromFile("student.dat");
 	cout << "成功加载" << size() << "个学生信息" << endl;
 }
 
@@ -91,10 +91,7 @@ void StudentInfoManager::saveToFile()
 	string fileName;
 	getline(cin, fileName);
 	if (fileName.empty())
-	{
-		fileName = "student.dat";//默认文件名
 		return;
-	}
 	if (!checkFileName(fileName))
 	{
 		cout << "重新输入文件名:-->\n";

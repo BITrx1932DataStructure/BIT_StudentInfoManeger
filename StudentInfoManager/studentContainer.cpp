@@ -1,4 +1,5 @@
-﻿#include<iostream>
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include<iostream>
 #include <fstream>
 #include<conio.h>
 #include "studentContainer.h"
@@ -61,8 +62,21 @@ void StudentContainer::readFromFile(string fileName)
 
 void StudentContainer::saveToFile(string fileName)
 {
-	ofstream fout(fileName);
-	for (auto p = begin(); p != end(); p++)
-		fout << (*p) << endl;
-	fout.close();
+	char* buf = new char[10000000];
+	char* p = buf;
+	FILE* fout = fopen(fileName.c_str(), "w");
+	string temp;
+	for (int i = 0; i < size(); i++)
+	{
+		temp = operator[](i).to_string();
+		strcpy(p, temp.c_str());
+		p += temp.length();
+		if (i % 10 == 0)
+		{
+			fwrite(buf, sizeof(char), p - buf, fout);
+			p = buf;
+		}
+	}
+	fwrite(buf, sizeof(char), p - buf, fout);
+	delete[] buf;
 }

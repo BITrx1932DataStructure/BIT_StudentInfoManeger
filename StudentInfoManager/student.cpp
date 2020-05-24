@@ -17,6 +17,11 @@ Student::~Student()
 
 }
 
+string Student::to_string() const
+{
+	return name + "\n" + id + "\n" + schoolId + "\n" + sex + "\n" + address + "\n" + age + "\n" + birth + "\n" + phone + '\n';
+}
+
 const Student Student::emptyStudent = Student();
 
 ostream& operator<<(ostream& out, const Date& date)
@@ -39,14 +44,7 @@ istream& operator>>(istream& in, Date& date)
 ostream& operator<<(ostream& out, const Student& stu)
 {
 	using std::endl;
-	out << stu.name << endl;
-	out << stu.id << endl;
-	out << stu.schoolId << endl;
-	out << stu.sex << endl;
-	out << stu.address << endl;
-	out << stu.age << endl;
-	out << stu.birth << endl;
-	out << stu.phone;
+	out << stu.to_string();
 
 	return out;
 }
