@@ -398,3 +398,4 @@ MigrationBackup/
 *.out
 *.app
 /LinearList/ClassDiagram.cd
+/Test

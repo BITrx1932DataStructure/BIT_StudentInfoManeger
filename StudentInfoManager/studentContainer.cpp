@@ -50,7 +50,7 @@ void StudentContainer::readFromFile(string fileName)
 	if (!fin.is_open())
 	{
 		cout << "文件打开错误" << endl;
-		_getch();
+		getchar();
 		return;
 	};
 	Student tempStudent;

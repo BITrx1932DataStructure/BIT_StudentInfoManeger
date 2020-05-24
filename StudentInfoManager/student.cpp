@@ -43,10 +43,10 @@ ostream& operator<<(ostream& out, const Student& stu)
 	out << stu.id << endl;
 	out << stu.schoolId << endl;
 	out << stu.sex << endl;
-	out << stu.age << endl;
 	out << stu.address << endl;
+	out << stu.age << endl;
 	out << stu.birth << endl;
-	out << stu.phone << endl;
+	out << stu.phone;
 
 	return out;
 }
