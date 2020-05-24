@@ -71,7 +71,7 @@ void StudentContainer::saveToFile(string fileName)
 		temp = operator[](i).to_string();
 		strcpy(p, temp.c_str());
 		p += temp.length();
-		if (i % 10 == 0)
+		if (i % 50000 == 0)
 		{
 			fwrite(buf, sizeof(char), p - buf, fout);
 			p = buf;
